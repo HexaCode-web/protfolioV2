@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="blackout hidden"></div>
+    <sidebar class="hidden">
+      <top>
+        <div class="logo"><img src="images/logo.png" /></div>
+        <button class="exit"><img src="images/exit.png" /></button>
+      </top>
+      <bottom>
+        <div class="box hidden"></div>
+        <div class="link"><a href="#">Home</a></div>
+        <div class="link"><a href="#">About</a></div>
+        <div class="link"><a href="#">Services</a></div>
+        <div class="link"><a href="#">Projects</a></div>
+        <div class="link"><a href="#">Contact</a></div>
+      </bottom>
+    </sidebar>
+    <header>
+      <div class="navbar">
+        <div class="logo"><img src="images/logo.png" /></div>
+        <button class="burger"><img src="images/menu.png" alt="" /></button>
+      </div>
+      <div class="header-content">
+        <div class="left">
+          <p class="name">HexaCode</p>
+          <h1>UNLEASH YOUR IMAGINATION</h1>
+          <p>you think. we design.</p>
+          <a id="contact" href="#contact">Contact Us</a>
+          <ul class="socials">
+            <li>
+              <a href=" https://wa.me/01227657288"
+                ><img src="images/whatsapp.png" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="https://github.com/HexaCode-web"
+                ><img src="images/github.png" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/marco-khairy-96bb6416a/"
+                ><img src="images/linkedin.png" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/marco.khairy.3/"
+                ><img src="images/facebook.png" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="photos">
+          <div class="bigphotos">
+            <img src="images/mobile.png" id="mobile" />
+            <img id="laptop" src="images/laptop.png" />
+            <img id="pc" src="images/pc.png" />
+            <img id="tablet" src="images/tablet.png" />
+          </div>
+          <div class="icons">
+            <img src="images/html.png" id="html" />
+            <img src="images/css.png" id="css" />
+            <img src="images/javascript.png" id="javascript" />
+            <img src="images/bootstrap.png" id="bootstrap" />
+            <img src="images/react.png" id="react" />
+            <img src="images/typescript.png" id="typescript" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="about">
+      <content class="hidden">
+        <h2>HexaCode</h2>
+        <p>
+          founded in 2022 in egypt,HexaCode is a starting web developing company
+          with a mindset of being the best, aiming to be the first place in a
+          field full of second places. we are driven by the desire of delivering
+          you the best product
+        </p>
+        <p>
+          we specialize in large and elegant designs along with taking care of
+          existing Projects
+        </p>
+        <p>
+          Our portfolio includes some of our proudest Projects, from simple
+          landing pages, to fully functional webpages,e-commerce, and elegant
+          business websites
+        </p>
+        <p>
+          wether you have the design or not we will be sure to give you the
+          finest results
+        </p>
+        <img src="images/signature.png" />
+      </content>
+    </section>
+    <section id="WhyUs">
+      <h2>WHY CHOOSE US</h2>
+      <div class="cards">
+        <div class="cardBG hidden"></div>
+        <div class="card one">
+          <h4>PROFESSIONAL AND DELICATE</h4>
+          <p>
+            in this industry details are everything. we never miss a detail.
+          </p>
+          <img src="images/delicate.png" />
+        </div>
+        <div class="card two">
+          <h4>UNIQUE DESIGNS</h4>
+          <p>Bring the beautifully for your websites. Just enjoy!.</p>
+          <img src="images/design.png" />
+        </div>
+        <div class="card three">
+          <h4>AFFORDABLE AND FLEXIBLE</h4>
+          <p>Although our work is perfect. our prices are'nt the highest</p>
+          <img src="images/save.png" />
+        </div>
+        <div class="card four">
+          <h4>24/7 SUPPORT</h4>
+          <p>
+            Consulting solutions and make plan to renovation anytime of the day
+          </p>
+          <img src="images/Customer.png" />
+        </div>
+      </div>
+      <div class="numbers">
+        <div class="item one">
+          <div class="num" data-val="92">00</div>
+          <span> Customers Pleased</span>
+        </div>
+        <div class="item two">
+          <div class="num" data-val="86">00</div>
+          <span>Projects Done</span>
+        </div>
+      </div>
+    </section>
+    <section id="Projects">
+      <h2>OUR PROJECTS</h2>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
