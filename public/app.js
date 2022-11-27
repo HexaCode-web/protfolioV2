@@ -9,6 +9,7 @@ const header = document.querySelector("header");
 const navbar = document.querySelector(".navbar");
 const CardsList = Array.from(document.querySelectorAll(".card"));
 const cardContainer = document.querySelector(".cards");
+const SCardContainer = document.querySelector("#Services").querySelector(".cards");
 const cardBG = document.querySelector(".cardBG");
 const numberEL = document.querySelector(".numbers");
 const photos = document.querySelector(".photos");
@@ -18,7 +19,7 @@ const ContactSection = document.querySelector("#contact");
 const aboutSection = document.querySelector("#about");
 const numbers = document.querySelectorAll(".num");
 let numbersDone = 0;
-const interval = 2000;
+const interval = 3000;
 console.log(Sections);
 photos.addEventListener("mouseenter", () => {
     for (let index = 0; index < iconsList.length; index++) {
@@ -51,10 +52,23 @@ document.addEventListener("scroll", () => {
     }
     if (cardContainer.getBoundingClientRect().top < 500) {
         CardsList.forEach(card => {
-            const cardEL = card;
-            cardEL.classList.remove("hidden");
-            const delay = CardsList.indexOf(card) * 0.1;
-            cardEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`;
+            if (CardsList.indexOf(card) <= 3) {
+                const cardEL = card;
+                cardEL.classList.remove("hidden");
+                const delay = CardsList.indexOf(card) * 0.1;
+                cardEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`;
+            }
+        });
+    }
+    ;
+    if (SCardContainer.getBoundingClientRect().top < 500) {
+        CardsList.forEach(card => {
+            if (CardsList.indexOf(card) > 3) {
+                const cardEL = card;
+                cardEL.classList.remove("hidden");
+                const delay = CardsList.indexOf(card) * 0.1;
+                cardEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`;
+            }
         });
     }
     ;
@@ -64,9 +78,7 @@ document.addEventListener("scroll", () => {
         ContactSectionText.classList.remove("hidden");
         form.classList.remove("hidden");
     }
-});
-document.addEventListener("scroll", () => {
-    if (numberEL.getBoundingClientRect().top < 550) {
+    if (numberEL.getBoundingClientRect().top < 650) {
         numbersDone++;
         if (numbersDone != 1) {
             return;

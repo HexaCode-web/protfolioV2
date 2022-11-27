@@ -947,7 +947,7 @@ input[type="submit"] {
     height: 350px;
   }
   #Services {
-    height: 1100px;
+    min-height: 1300px;
   }
   #contact {
     border-top-left-radius: 100px;

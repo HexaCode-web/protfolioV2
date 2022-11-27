@@ -7,7 +7,8 @@ const LinkBG: HTMLDivElement = document.querySelector(".box")!;
 const header: HTMLHeadElement = document.querySelector("header")!
 const navbar: HTMLDivElement = document.querySelector(".navbar")!
 const CardsList: object[] = Array.from(document.querySelectorAll(".card"))
-const cardContainer:HTMLDivElement=document.querySelector(".cards")!
+const cardContainer: HTMLDivElement = document.querySelector(".cards")!
+const SCardContainer:HTMLDivElement=document.querySelector("#Services")!.querySelector(".cards")!
 const cardBG: HTMLDivElement = document.querySelector(".cardBG")!
 const numberEL: HTMLDivElement = document.querySelector(".numbers")!
 const photos: HTMLDivElement = document.querySelector(".photos")!
@@ -17,7 +18,7 @@ const ContactSection:HTMLDivElement=document.querySelector("#contact")!
 const aboutSection: HTMLDivElement = document.querySelector("#about")!
 const numbers = document.querySelectorAll(".num")
 let numbersDone: number = 0
-const interval = 2000
+const interval = 3000
 console.log(Sections)
 
 photos.addEventListener("mouseenter", () => {
@@ -49,11 +50,24 @@ document.addEventListener("scroll", () => {
         const aboutSectionContent:HTMLDivElement=aboutSection.querySelector("content")!
         aboutSectionContent.classList.remove("hidden")
     }if (cardContainer.getBoundingClientRect().top < 500) {
-    CardsList.forEach(card => {
-        const cardEL = card as unknown as HTMLDivElement
-        cardEL.classList.remove("hidden")
-            const delay: number = CardsList.indexOf(card) * 0.1
-            cardEL.style.animation=`slideFromBottom 1s ${delay}s ease-in both`
+        CardsList.forEach(card => {
+            if (CardsList.indexOf(card) <= 3) {
+                const cardEL = card as unknown as HTMLDivElement
+                cardEL.classList.remove("hidden")
+                const delay: number = CardsList.indexOf(card) * 0.1
+                cardEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`
+            }
+        }
+        )
+    };
+    if (SCardContainer.getBoundingClientRect().top < 500) {
+        CardsList.forEach(card => {
+            if (CardsList.indexOf(card) > 3) {
+                const cardEL = card as unknown as HTMLDivElement
+                cardEL.classList.remove("hidden")
+                const delay: number = CardsList.indexOf(card) * 0.1
+                cardEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`
+            }
         }
         )
     };
@@ -63,9 +77,7 @@ document.addEventListener("scroll", () => {
         ContactSectionText.classList.remove("hidden")
         form.classList.remove("hidden")
     }
-})
-document.addEventListener("scroll", () => {
-    if (numberEL.getBoundingClientRect().top < 550) {
+    if (numberEL.getBoundingClientRect().top < 650) {
         numbersDone++
         if (numbersDone != 1) {
             return
@@ -85,8 +97,7 @@ document.addEventListener("scroll", () => {
             })
         }
     }
-}
-)
+})
 exit.addEventListener("click", () => {
     CloseMenu()
 })
