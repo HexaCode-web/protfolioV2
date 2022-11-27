@@ -36,6 +36,8 @@ photos.addEventListener("mouseleave", () => {
     });
 })
 document.addEventListener("scroll", () => {
+    const windowHeight:number = window.innerHeight
+    const revealPoint:number = 150;
     if (header.getBoundingClientRect().top < -66) {
         navbar.style.position = "fixed"
         navbar.style.paddingTop = "0"
@@ -46,7 +48,7 @@ document.addEventListener("scroll", () => {
         navbar.style.paddingTop = "50px"
         navbar.style.backgroundColor = "transparent"
     }
-    if (aboutSection.getBoundingClientRect().top < 820) {
+    if (aboutSection.getBoundingClientRect().top < windowHeight-revealPoint) {
         const aboutSectionContent:HTMLDivElement=aboutSection.querySelector("content")!
         aboutSectionContent.classList.remove("hidden")
     }if (cardContainer.getBoundingClientRect().top < 600) {
@@ -60,7 +62,8 @@ document.addEventListener("scroll", () => {
         }
         )
     };
-    if (SCardContainer.getBoundingClientRect().top < 820) {
+
+    if (SCardContainer.getBoundingClientRect().top<windowHeight-revealPoint) {
         CardsList.forEach(card => {
             if (CardsList.indexOf(card) > 3) {
                 const cardEL = card as unknown as HTMLDivElement
@@ -71,13 +74,13 @@ document.addEventListener("scroll", () => {
         }
         )
     };
-    if (ContactSection.getBoundingClientRect().top < 820) {
+    if (ContactSection.getBoundingClientRect().top < windowHeight-revealPoint) {
         let ContactSectionText: HTMLDivElement = ContactSection.querySelector(".headline")!
         let form: HTMLFormElement = ContactSection.querySelector("#my-form")!
         ContactSectionText.classList.remove("hidden")
         form.classList.remove("hidden")
     }
-    if (numberEL.getBoundingClientRect().top < 820) {
+    if (numberEL.getBoundingClientRect().top < windowHeight-revealPoint+200) {
         numbersDone++
         if (numbersDone != 1) {
             return
