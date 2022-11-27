@@ -50,7 +50,7 @@ document.addEventListener("scroll", () => {
         const aboutSectionContent = aboutSection.querySelector("content");
         aboutSectionContent.classList.remove("hidden");
     }
-    if (cardContainer.getBoundingClientRect().top < 500) {
+    if (cardContainer.getBoundingClientRect().top < 600) {
         CardsList.forEach(card => {
             if (CardsList.indexOf(card) <= 3) {
                 const cardEL = card;
@@ -61,7 +61,7 @@ document.addEventListener("scroll", () => {
         });
     }
     ;
-    if (SCardContainer.getBoundingClientRect().top < 500) {
+    if (SCardContainer.getBoundingClientRect().top < 600) {
         CardsList.forEach(card => {
             if (CardsList.indexOf(card) > 3) {
                 const cardEL = card;
@@ -72,13 +72,13 @@ document.addEventListener("scroll", () => {
         });
     }
     ;
-    if (ContactSection.getBoundingClientRect().top < 400) {
+    if (ContactSection.getBoundingClientRect().top < 600) {
         let ContactSectionText = ContactSection.querySelector(".headline");
         let form = ContactSection.querySelector("#my-form");
         ContactSectionText.classList.remove("hidden");
         form.classList.remove("hidden");
     }
-    if (numberEL.getBoundingClientRect().top < 650) {
+    if (numberEL.getBoundingClientRect().top < 700) {
         numbersDone++;
         if (numbersDone != 1) {
             return;

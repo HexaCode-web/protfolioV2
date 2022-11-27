@@ -49,7 +49,7 @@ document.addEventListener("scroll", () => {
     if (aboutSection.getBoundingClientRect().top < 600) {
         const aboutSectionContent:HTMLDivElement=aboutSection.querySelector("content")!
         aboutSectionContent.classList.remove("hidden")
-    }if (cardContainer.getBoundingClientRect().top < 500) {
+    }if (cardContainer.getBoundingClientRect().top < 600) {
         CardsList.forEach(card => {
             if (CardsList.indexOf(card) <= 3) {
                 const cardEL = card as unknown as HTMLDivElement
@@ -60,7 +60,7 @@ document.addEventListener("scroll", () => {
         }
         )
     };
-    if (SCardContainer.getBoundingClientRect().top < 500) {
+    if (SCardContainer.getBoundingClientRect().top < 600) {
         CardsList.forEach(card => {
             if (CardsList.indexOf(card) > 3) {
                 const cardEL = card as unknown as HTMLDivElement
@@ -71,13 +71,13 @@ document.addEventListener("scroll", () => {
         }
         )
     };
-    if (ContactSection.getBoundingClientRect().top < 400) {
+    if (ContactSection.getBoundingClientRect().top < 600) {
         let ContactSectionText: HTMLDivElement = ContactSection.querySelector(".headline")!
         let form: HTMLFormElement = ContactSection.querySelector("#my-form")!
         ContactSectionText.classList.remove("hidden")
         form.classList.remove("hidden")
     }
-    if (numberEL.getBoundingClientRect().top < 650) {
+    if (numberEL.getBoundingClientRect().top < 700) {
         numbersDone++
         if (numbersDone != 1) {
             return
