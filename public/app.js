@@ -49,14 +49,15 @@ document.addEventListener("scroll", () => {
         const aboutSectionContent = aboutSection.querySelector("content");
         aboutSectionContent.classList.remove("hidden");
     }
-    CardsList.forEach(card => {
-        const cardEL = card;
-        if (cardEL.getBoundingClientRect().top < 650) {
+    if (cardContainer.getBoundingClientRect().top < 500) {
+        CardsList.forEach(card => {
+            const cardEL = card;
+            cardEL.classList.remove("hidden");
             const delay = CardsList.indexOf(card) * 0.1;
             cardEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`;
-        }
-        ;
-    });
+        });
+    }
+    ;
     if (ContactSection.getBoundingClientRect().top < 400) {
         let ContactSectionText = ContactSection.querySelector(".headline");
         let form = ContactSection.querySelector("#my-form");

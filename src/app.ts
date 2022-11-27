@@ -48,15 +48,15 @@ document.addEventListener("scroll", () => {
     if (aboutSection.getBoundingClientRect().top < 600) {
         const aboutSectionContent:HTMLDivElement=aboutSection.querySelector("content")!
         aboutSectionContent.classList.remove("hidden")
-    }
+    }if (cardContainer.getBoundingClientRect().top < 500) {
     CardsList.forEach(card => {
-    const cardEL = card as unknown as HTMLDivElement
-        if (cardEL.getBoundingClientRect().top < 650) {
+        const cardEL = card as unknown as HTMLDivElement
+        cardEL.classList.remove("hidden")
             const delay: number = CardsList.indexOf(card) * 0.1
             cardEL.style.animation=`slideFromBottom 1s ${delay}s ease-in both`
-        };
-    }
-    )
+        }
+        )
+    };
     if (ContactSection.getBoundingClientRect().top < 400) {
         let ContactSectionText: HTMLDivElement = ContactSection.querySelector(".headline")!
         let form: HTMLFormElement = ContactSection.querySelector("#my-form")!
