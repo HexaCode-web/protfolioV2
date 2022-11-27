@@ -51,7 +51,7 @@ document.addEventListener("scroll", () => {
     }
     CardsList.forEach(card => {
     const cardEL = card as unknown as HTMLDivElement
-    if (cardEL.getBoundingClientRect().top < 500) {
+        if (cardEL.getBoundingClientRect().top < 650) {
             const delay: number = CardsList.indexOf(card) * 0.1
             cardEL.style.animation=`slideFromBottom 1s ${delay}s ease-in both`
         };

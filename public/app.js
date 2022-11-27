@@ -51,7 +51,7 @@ document.addEventListener("scroll", () => {
     }
     CardsList.forEach(card => {
         const cardEL = card;
-        if (cardEL.getBoundingClientRect().top < 500) {
+        if (cardEL.getBoundingClientRect().top < 650) {
             const delay = CardsList.indexOf(card) * 0.1;
             cardEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`;
         }
