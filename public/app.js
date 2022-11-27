@@ -11,12 +11,15 @@ const CardsList = Array.from(document.querySelectorAll(".card"));
 const cardContainer = document.querySelector(".cards");
 const cardBG = document.querySelector(".cardBG");
 const numberEL = document.querySelector(".numbers");
-const aboutSection = document.querySelector("#about");
 const photos = document.querySelector(".photos");
 const iconsList = document.querySelector(".icons").querySelectorAll("img");
+const Sections = Array.from(document.querySelectorAll("section"));
+const ContactSection = document.querySelector("#contact");
+const aboutSection = document.querySelector("#about");
 const numbers = document.querySelectorAll(".num");
-const interval = 2000;
 let numbersDone = 0;
+const interval = 2000;
+console.log(Sections);
 photos.addEventListener("mouseenter", () => {
     for (let index = 0; index < iconsList.length; index++) {
         if (index === 1 || index === 5)
@@ -46,12 +49,19 @@ document.addEventListener("scroll", () => {
         const aboutSectionContent = aboutSection.querySelector("content");
         aboutSectionContent.classList.remove("hidden");
     }
-    if (cardContainer.getBoundingClientRect().top < 600) {
-        CardsList.forEach(card => {
-            const cardEL = card;
+    CardsList.forEach(card => {
+        const cardEL = card;
+        if (cardEL.getBoundingClientRect().top < 500) {
             const delay = CardsList.indexOf(card) * 0.1;
             cardEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`;
-        });
+        }
+        ;
+    });
+    if (ContactSection.getBoundingClientRect().top < 400) {
+        let ContactSectionText = ContactSection.querySelector(".headline");
+        let form = ContactSection.querySelector("#my-form");
+        ContactSectionText.classList.remove("hidden");
+        form.classList.remove("hidden");
     }
 });
 document.addEventListener("scroll", () => {
@@ -78,6 +88,9 @@ document.addEventListener("scroll", () => {
     }
 });
 exit.addEventListener("click", () => {
+    CloseMenu();
+});
+const CloseMenu = () => {
     blackout.classList.add("shrink");
     sideBar.classList.add("shrink");
     setTimeout(() => {
@@ -86,13 +99,17 @@ exit.addEventListener("click", () => {
         blackout.classList.remove("shrink");
         sideBar.classList.remove("shrink");
     }, 1000);
-});
+};
 burgerBTN.addEventListener("click", () => {
     blackout.classList.remove("hidden");
     sideBar.classList.remove("hidden");
 });
 SideBarLinksList.forEach(link => {
     const linkEL = link;
+    linkEL.addEventListener("click", () => {
+        ScrollIntoView(Sections[SideBarLinksList.indexOf(link) - 1]);
+        CloseMenu();
+    });
     linkEL.addEventListener("mouseenter", () => {
         linkEL.appendChild(LinkBG);
         linkEL.querySelector("a").style.color = "white";
@@ -103,27 +120,37 @@ SideBarLinksList.forEach(link => {
         linkEL.querySelector("a").style.color = "black";
     });
 });
+const ScrollIntoView = (target) => {
+    target.scrollIntoView(false);
+};
 CardsList.forEach(card => {
     const cardEL = card;
     cardEL.addEventListener("mouseenter", () => {
         cardBG.classList.remove("hidden");
         cardEL.insertBefore(cardBG, cardEL.children[0]);
-        setTimeout(() => {
-            switch (CardsList.indexOf(cardEL)) {
-                case 0:
-                    cardEL.querySelector("img").src = "images/delicateHover.png";
-                    break;
-                case 1:
-                    cardEL.querySelector("img").src = "images/designHover.png";
-                    break;
-                case 2:
-                    cardEL.querySelector("img").src = "images/SaveHover.png";
-                    break;
-                case 3:
-                    cardEL.querySelector("img").src = "images/CustomerHover.png";
-                    break;
-            }
-        }, 100);
+        switch (CardsList.indexOf(cardEL)) {
+            case 0:
+                cardEL.querySelector("img").src = "images/delicateHover.png";
+                break;
+            case 1:
+                cardEL.querySelector("img").src = "images/designHover.png";
+                break;
+            case 2:
+                cardEL.querySelector("img").src = "images/SaveHover.png";
+                break;
+            case 3:
+                cardEL.querySelector("img").src = "images/CustomerHover.png";
+                break;
+            case 4:
+                cardEL.querySelector("img").src = "images/buildHover.png";
+                break;
+            case 5:
+                cardEL.querySelector("img").src = "images/maintainHover.png";
+                break;
+            case 6:
+                cardEL.querySelector("img").src = "images/uiuxHover.png";
+                break;
+        }
     });
     cardEL.addEventListener("mouseleave", () => {
         cardBG.classList.add("hidden");
@@ -140,6 +167,54 @@ CardsList.forEach(card => {
             case 3:
                 cardEL.querySelector("img").src = "images/Customer.png";
                 break;
+            case 4:
+                cardEL.querySelector("img").src = "images/build.png";
+                break;
+            case 5:
+                cardEL.querySelector("img").src = "images/maintain.png";
+                break;
+            case 6:
+                cardEL.querySelector("img").src = "images/uiux.png";
+                break;
         }
     });
 });
+window.addEventListener("DOMContentLoaded", () => {
+    // get the form elements defined in your form HTML above
+    const form = document.getElementById("my-form");
+    // var button = document.getElementById("my-form-button");
+    const status = document.getElementById("status");
+    // Success and Error functions for after the form is submitted
+    const success = () => {
+        form.reset();
+        status.classList.add("success");
+        status.innerHTML = "Thanks!";
+    };
+    const error = () => {
+        status.classList.add("error");
+        status.innerHTML = "Oops! There was a problem.";
+    };
+    // handle the form submission event
+    form.addEventListener("submit", (ev) => {
+        ev.preventDefault();
+        var data = new FormData(form);
+        ajax(form.method, form.action, data, success, error);
+    });
+});
+// helper function for sending an AJAX request
+const ajax = (method, url, data, success, error) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState !== XMLHttpRequest.DONE)
+            return;
+        if (xhr.status === 200) {
+            success(xhr.response, xhr.responseType);
+        }
+        else {
+            error(xhr.status, xhr.response, xhr.responseType);
+        }
+    };
+    xhr.send(data);
+};

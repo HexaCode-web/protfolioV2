@@ -5,10 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +20,6 @@
     />
     <title>portfolio</title>
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="app.js" defer></script>
   </head>
   <body>
     <div class="blackout hidden"></div>
@@ -34,10 +31,13 @@
       <bottom>
         <div class="box hidden"></div>
         <div class="link"><a href="#">Home</a></div>
-        <div class="link"><a href="#">About</a></div>
-        <div class="link"><a href="#">Services</a></div>
-        <div class="link"><a href="#">Projects</a></div>
-        <div class="link"><a href="#">Contact</a></div>
+        <div class="link">
+          <a>About</a>
+        </div>
+        <div class="link"><a>Why Us?</a></div>
+        <div class="link"><a>Projects</a></div>
+        <div class="link"><a>Services</a></div>
+        <div class="link"><a>Contact</a></div>
       </bottom>
     </sidebar>
     <header>
@@ -50,7 +50,7 @@
           <p class="name">HexaCode</p>
           <h1>UNLEASH YOUR IMAGINATION</h1>
           <p>you think. we design.</p>
-          <a id="contact" href="#contact">Contact Us</a>
+          <a class="contact" href="#contact">Contact Us</a>
           <ul class="socials">
             <li>
               <a href=" https://wa.me/01227657288"
@@ -92,83 +92,164 @@
         </div>
       </div>
     </header>
-    <section id="about">
-      <content class="hidden">
-        <h2>HexaCode</h2>
-        <p>
-          founded in 2022 in egypt,HexaCode is a starting web developing company
-          with a mindset of being the best, aiming to be the first place in a
-          field full of second places. we are driven by the desire of delivering
-          you the best product
-        </p>
-        <p>
-          we specialize in large and elegant designs along with taking care of
-          existing Projects
-        </p>
-        <p>
-          Our portfolio includes some of our proudest Projects, from simple
-          landing pages, to fully functional webpages,e-commerce, and elegant
-          business websites
-        </p>
-        <p>
-          wether you have the design or not we will be sure to give you the
-          finest results
-        </p>
-        <img src="images/signature.png" />
-      </content>
-    </section>
-    <section id="WhyUs">
-      <h2>WHY CHOOSE US</h2>
-      <div class="cards">
-        <div class="cardBG hidden"></div>
-        <div class="card one">
-          <h4>PROFESSIONAL AND DELICATE</h4>
+    <div class="section-wrapper">
+      <section id="about">
+        <content class="hidden">
+          <h2>HexaCode</h2>
           <p>
-            in this industry details are everything. we never miss a detail.
+            founded in 2022 in egypt,HexaCode is a starting web developing
+            company with a mindset of being the best, aiming to be the first
+            place in a field full of second places. we are driven by the desire
+            of delivering you the best product
           </p>
-          <img src="images/delicate.png" />
-        </div>
-        <div class="card two">
-          <h4>UNIQUE DESIGNS</h4>
-          <p>Bring the beautifully for your websites. Just enjoy!.</p>
-          <img src="images/design.png" />
-        </div>
-        <div class="card three">
-          <h4>AFFORDABLE AND FLEXIBLE</h4>
-          <p>Although our work is perfect. our prices are'nt the highest</p>
-          <img src="images/save.png" />
-        </div>
-        <div class="card four">
-          <h4>24/7 SUPPORT</h4>
           <p>
-            Consulting solutions and make plan to renovation anytime of the day
+            we specialize in large and elegant designs along with taking care of
+            existing Projects
           </p>
-          <img src="images/Customer.png" />
+          <p>
+            Our portfolio includes some of our proudest Projects, from simple
+            landing pages, to fully functional webpages,e-commerce, and elegant
+            business websites
+          </p>
+          <p>
+            wether you have the design or not we will be sure to give you the
+            finest results
+          </p>
+          <img src="images/signature.png" />
+        </content>
+      </section>
+      <section id="WhyUs">
+        <h2 class="headline">WHY CHOOSE US</h2>
+        <div class="cards">
+          <div class="cardBG hidden"></div>
+          <div class="card one">
+            <h4>PROFESSIONAL AND DELICATE</h4>
+            <p>
+              in this industry details are everything. we never miss a detail.
+            </p>
+            <img src="images/delicate.png" />
+          </div>
+          <div class="card two">
+            <h4>UNIQUE DESIGNS</h4>
+            <p>Bring the beautifully for your websites. Just enjoy!.</p>
+            <img src="images/design.png" />
+          </div>
+          <div class="card three">
+            <h4>AFFORDABLE AND FLEXIBLE</h4>
+            <p>Although our work is perfect. our prices are'nt the highest</p>
+            <img src="images/save.png" />
+          </div>
+          <div class="card four">
+            <h4>24/7 SUPPORT</h4>
+            <p>
+              Consulting solutions and make plan to renovation anytime of the
+              day
+            </p>
+            <img src="images/Customer.png" />
+          </div>
         </div>
-      </div>
-      <div class="numbers">
-        <div class="item one">
-          <div class="num" data-val="92">00</div>
-          <span> Customers Pleased</span>
+        <div class="numbers">
+          <div class="item one">
+            <div class="num" data-val="89">00</div>
+            <span> Customers Pleased</span>
+          </div>
+          <div class="item two">
+            <div class="num" data-val="86">00</div>
+            <span>Projects Done</span>
+          </div>
         </div>
-        <div class="item two">
-          <div class="num" data-val="86">00</div>
-          <span>Projects Done</span>
+      </section>
+      <section id="Projects">
+        <h2 class="headline">OUR PROJECTS</h2>
+        <ul class="Sort">
+          <li id="All"><p>All</p></li>
+          <li id="Landing"><p>Landing Pages</p></li>
+          <li id="Major"><p>Major Projects</p></li>
+          <!-- <li id="Business"><p>Business Cards</p></li> -->
+          <li id="Other"><p>Others</p></li>
+        </ul>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-pagination"></div>
         </div>
-      </div>
-    </section>
-    <section id="Projects">
-      <h2>OUR PROJECTS</h2>
-    </section>
+      </section>
+      <section id="Services">
+        <h2 class="headline">WHAT DO WE DO?</h2>
+        <div class="cards">
+          <div class="card one">
+            <h4>BUILDING AND DEVELOPING</h4>
+            <p>We take care of building and developing your website.</p>
+            <img src="images/build.png" />
+          </div>
+          <div class="card two">
+            <h4>MAINTAIN WEBSITES</h4>
+            <p>We Work on making sure your current websites are bug free</p>
+            <img src="images/maintain.png" />
+          </div>
+          <div class="card three">
+            <h4>UI&UX</h4>
+            <p>
+              Even if you don't have a design. do not worry. we provide designs
+            </p>
+            <img src="images/uiux.png" />
+          </div>
+        </div>
+      </section>
+      <!-- <section id="testimonials">
+    <h2>WHAT DO THEY THINK ABOUT US?</h2>
+    </section> -->
+      <section id="contact">
+        <h2 class="headline hidden">LETS WORK TOGETHER</h2>
+        <form
+          action="https://formspree.io/f/mayknryl"
+          method="POST"
+          name="emailForm"
+          id="my-form"
+          class="hidden"
+        >
+          <div class="item Form-Group" id="FName">
+            <label for="Fname">Your First Name:</label>
+            <input type="text" name="Fname" id="Fname" required />
+          </div>
+          <div class="item Form-Group" id="LName">
+            <label for="Lname">Your Last Name:</label>
+            <input type="text" name="Lname" id="Lname" required />
+          </div>
+          <div class="item Form-Group" id="Email">
+            <label for="email">Your Email:</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div class="item Form-Group" id="Subject">
+            <label for="subject">Your Subject:</label>
+            <input type="text" name="subject" id="subject" required />
+          </div>
+          <div class="item Form-Group" id="Message">
+            <label for="message">Your Message:</label>
+            <textarea name="Massage"></textarea>
+          </div>
+          <span class="status"></span>
+          <input type="submit" id="submit" />
+        </form>
+        <div id="status"></div>
+      </section>
+    </div>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="ProjectsFunctions.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-      crossorigin="anonymous"
+      id="THIRDscript"
+      src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-      crossorigin="anonymous"
-    ></script>
+    <script id="thirdScriptContent">
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        centeredSlides: false,
+        spaceBetween: 0,
+        grabCursor: false,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
   </body>
 </html>
