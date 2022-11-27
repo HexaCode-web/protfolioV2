@@ -796,7 +796,7 @@ input[type="submit"] {
     }
   }
   header {
-    height: 150vh;
+    height: 723px;
   }
   .header-content {
     padding: 0;
@@ -811,7 +811,7 @@ input[type="submit"] {
     width: 100%;
   }
   .bigphotos {
-    left: 0;
+    left: -8px;
   }
   #pc {
     width: 300px;
@@ -866,7 +866,7 @@ input[type="submit"] {
   }
   #about {
     padding-right: 0;
-    height: 90vh;
+    max-height: 650px;
   }
   section::before {
     display: none;
@@ -881,7 +881,7 @@ input[type="submit"] {
     padding-left: 0;
   }
   #WhyUs {
-    min-height: 350vh;
+    min-height: 1700px;
   }
   .headline {
     padding-left: 0;
@@ -930,7 +930,7 @@ input[type="submit"] {
     width: 100%;
   }
   #Projects {
-    height: 110vh;
+    height: 550px;
   }
   #Projects .headline {
     margin-top: 0px;
@@ -946,12 +946,12 @@ input[type="submit"] {
     height: 350px;
   }
   #Services {
-    height: 226vh;
+    height: 1100px;
   }
   #contact {
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
-    height: 150vh;
+    height: 730px;
   }
   form {
     grid-template-areas:
