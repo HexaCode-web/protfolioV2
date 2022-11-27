@@ -78,7 +78,7 @@ document.addEventListener("scroll", () => {
         ContactSectionText.classList.remove("hidden");
         form.classList.remove("hidden");
     }
-    if (numberEL.getBoundingClientRect().top < 700) {
+    if (numberEL.getBoundingClientRect().top < 800) {
         numbersDone++;
         if (numbersDone != 1) {
             return;
