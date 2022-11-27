@@ -37,7 +37,7 @@ photos.addEventListener("mouseleave", () => {
 });
 document.addEventListener("scroll", () => {
     const windowHeight = window.innerHeight;
-    const revealPoint = 150;
+    const revealPoint = 50;
     if (header.getBoundingClientRect().top < -66) {
         navbar.style.position = "fixed";
         navbar.style.paddingTop = "0";
@@ -80,7 +80,7 @@ document.addEventListener("scroll", () => {
         ContactSectionText.classList.remove("hidden");
         form.classList.remove("hidden");
     }
-    if (numberEL.getBoundingClientRect().top < windowHeight - revealPoint + 200) {
+    if (numberEL.getBoundingClientRect().top < windowHeight - revealPoint) {
         numbersDone++;
         if (numbersDone != 1) {
             return;

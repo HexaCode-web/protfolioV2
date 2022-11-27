@@ -563,6 +563,9 @@ h3 {
   user-select: none;
   width: 100%;
 }
+.swiper-wrapper {
+  opacity: 0;
+}
 .swiper-slide {
   margin-left: 30px;
   user-select: none;
@@ -943,6 +946,7 @@ input[type="submit"] {
     margin-left: 0px;
     justify-content: space-around;
   }
+
   .swiper-slide {
     height: 350px;
   }

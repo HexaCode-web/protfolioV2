@@ -69,8 +69,9 @@ OthersButton.addEventListener("click", () => {
 });
 document.addEventListener("scroll", () => {
     const windowHeight = window.innerHeight;
-    const revealPoint = 150;
+    const revealPoint = 50;
     if (ProjectsContainer.getBoundingClientRect().top < windowHeight - revealPoint) {
+        ProjectsContainer.style.opacity = "1";
         numbersDone++;
         if (numbersDone != 1) {
             return;
@@ -78,6 +79,7 @@ document.addEventListener("scroll", () => {
         else {
             ProjectsList.forEach(project => {
                 const ProjectEL = project;
+                ProjectEL.classList.remove("hidden");
                 const delay = ProjectsList.indexOf(project) * 0.1;
                 ProjectEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`;
             });

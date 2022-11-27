@@ -70,14 +70,16 @@ OthersButton.addEventListener("click", () => {
 })
 document.addEventListener("scroll", () => {
     const windowHeight:number = window.innerHeight
-    const revealPoint:number = 150;
-    if (ProjectsContainer.getBoundingClientRect().top < windowHeight-revealPoint) {
-            numbersDone++
-        if (numbersDone != 1) {
-            return
-        } else {
+    const revealPoint:number = 50;
+    if (ProjectsContainer.getBoundingClientRect().top < windowHeight - revealPoint) {
+        ProjectsContainer.style.opacity="1"
+        numbersDone++
+    if (numbersDone != 1) {
+        return
+    } else {
             ProjectsList.forEach(project => {
                 const ProjectEL = project as unknown as HTMLDivElement
+                ProjectEL.classList.remove("hidden")
                 const delay: number = ProjectsList.indexOf(project) * 0.1
                 ProjectEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`
             });
