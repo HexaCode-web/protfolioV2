@@ -68,7 +68,7 @@ OthersButton.addEventListener("click", () => {
     PrintNeededProjects(others);
 });
 document.addEventListener("scroll", () => {
-    if (ProjectsContainer.getBoundingClientRect().top < 800) {
+    if (ProjectsContainer.getBoundingClientRect().top < 820) {
         numbersDone++;
         if (numbersDone != 1) {
             return;

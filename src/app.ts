@@ -46,7 +46,7 @@ document.addEventListener("scroll", () => {
         navbar.style.paddingTop = "50px"
         navbar.style.backgroundColor = "transparent"
     }
-    if (aboutSection.getBoundingClientRect().top < 600) {
+    if (aboutSection.getBoundingClientRect().top < 820) {
         const aboutSectionContent:HTMLDivElement=aboutSection.querySelector("content")!
         aboutSectionContent.classList.remove("hidden")
     }if (cardContainer.getBoundingClientRect().top < 600) {
@@ -60,7 +60,7 @@ document.addEventListener("scroll", () => {
         }
         )
     };
-    if (SCardContainer.getBoundingClientRect().top < 600) {
+    if (SCardContainer.getBoundingClientRect().top < 820) {
         CardsList.forEach(card => {
             if (CardsList.indexOf(card) > 3) {
                 const cardEL = card as unknown as HTMLDivElement
@@ -71,13 +71,13 @@ document.addEventListener("scroll", () => {
         }
         )
     };
-    if (ContactSection.getBoundingClientRect().top < 600) {
+    if (ContactSection.getBoundingClientRect().top < 820) {
         let ContactSectionText: HTMLDivElement = ContactSection.querySelector(".headline")!
         let form: HTMLFormElement = ContactSection.querySelector("#my-form")!
         ContactSectionText.classList.remove("hidden")
         form.classList.remove("hidden")
     }
-    if (numberEL.getBoundingClientRect().top < 800) {
+    if (numberEL.getBoundingClientRect().top < 820) {
         numbersDone++
         if (numbersDone != 1) {
             return
