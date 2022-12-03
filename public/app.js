@@ -13,14 +13,38 @@ const SCardContainer = document.querySelector("#Services").querySelector(".cards
 const cardBG = document.querySelector(".cardBG");
 const numberEL = document.querySelector(".numbers");
 const photos = document.querySelector(".photos");
+const canvas = document.querySelector(".canvus");
+const thirdScriptContent = document.querySelector("#thirdScriptContent");
 const iconsList = document.querySelector(".icons").querySelectorAll("img");
 const Sections = Array.from(document.querySelectorAll("section"));
 const ContactSection = document.querySelector("#contact");
 const aboutSection = document.querySelector("#about");
+const ProjectsContainer = document.querySelector(".swiper-wrapper");
 const numbers = document.querySelectorAll(".num");
 let numbersDone = 0;
 const interval = 3000;
 console.log(Sections);
+if (window.innerWidth < 500) {
+    canvas.style.display = "none";
+}
+// document.addEventListener("scroll", () => {
+//     const windowHeight:number = window.innerHeight
+//     const revealPoint:number = 50;
+//     if (ProjectsContainer.getBoundingClientRect().top < windowHeight - revealPoint) {
+//         ProjectsContainer.style.opacity="1"
+//         numbersDone++
+//     if (numbersDone != 1) {
+//         return
+//     } else {
+//             ProjectsList.forEach(project => {
+//                 const ProjectEL = project as unknown as HTMLDivElement
+//                 ProjectEL.classList.remove("hidden")
+//                 const delay: number = ProjectsList.indexOf(project) * 0.1
+//                 ProjectEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`
+//             });
+//         }
+//         }
+// })
 photos.addEventListener("mouseenter", () => {
     for (let index = 0; index < iconsList.length; index++) {
         if (index === 1 || index === 5)
@@ -51,6 +75,9 @@ document.addEventListener("scroll", () => {
     if (aboutSection.getBoundingClientRect().top < windowHeight - revealPoint) {
         const aboutSectionContent = aboutSection.querySelector("content");
         aboutSectionContent.classList.remove("hidden");
+    }
+    if (canvas.getBoundingClientRect().top < windowHeight - revealPoint) {
+        canvas.classList.remove("hidden");
     }
     if (cardContainer.getBoundingClientRect().top < 600) {
         CardsList.forEach(card => {
@@ -233,3 +260,35 @@ const ajax = (method, url, data, success, error) => {
     };
     xhr.send(data);
 };
+var swiper = new Swiper(".slide-container", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    sliderPerGroup: 4,
+    loop: true,
+    centerSlide: "true",
+    fade: "true",
+    grabCursor: "true",
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        520: {
+            slidesPerView: 2,
+        },
+        768: {
+            slidesPerView: 3,
+        },
+        1000: {
+            slidesPerView: 4,
+        },
+    },
+});

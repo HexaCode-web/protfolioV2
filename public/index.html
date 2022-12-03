@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
+    <!-- swipper css -->
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -94,6 +92,7 @@
     </header>
     <div class="section-wrapper">
       <section id="about">
+        <div class="canvus hidden"></div>
         <content class="hidden">
           <h2>HexaCode</h2>
           <p>
@@ -115,7 +114,7 @@
             Whether you have the design or not we will be sure to give you the
             finest results
           </p>
-          <!-- <img src="images/signature.png" /> -->
+          <img src="images/signature.png" />
         </content>
       </section>
       <section id="WhyUs">
@@ -161,15 +160,138 @@
       </section>
       <section id="Projects">
         <h2 class="headline">OUR PROJECTS</h2>
-        <ul class="Sort">
-          <li id="All"><p>All</p></li>
-          <li id="Landing"><p>Landing Pages</p></li>
-          <li id="Major"><p>Major Projects</p></li>
-          <!-- <li id="Business"><p>Business Cards</p></li> -->
-          <li id="Other"><p>Others</p></li>
-        </ul>
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper"></div>
+        <div class="container swiper">
+          <div class="slide-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a
+                  href="https://hexacode-web.github.io/huddle-landing-page-with-curved-sections/"
+                >
+                  <div class="Projects-image">
+                    <img src="images/extra/huddle landing page.jpg" />
+                  </div>
+                  <div class="info">
+                    <p class="project-Name">Huddle Landing Page</p>
+                    <p class="project-Details">
+                      a simple landing page using HTML and CSS and javascript
+                    </p>
+                    <p class="project-Type">LandingPage</p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://hexacode-web.github.io/clipboard-landing-page/"
+                >
+                  <div class="Projects-image">
+                    <img src="images/extra/clipboard.jpg" />
+                  </div>
+                  <div class="info">
+                    <p class="project-Name">clipboard landing page</p>
+                    <p class="project-Details">
+                      a simple yet elegant landing page using HTML and CSS and
+                      javascript
+                    </p>
+                    <p class="project-Type">LandingPage</p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://hexacode-web.github.io/blogr-landing-page/">
+                  <div class="Projects-image">
+                    <img src="images/extra/blogr landing page.jpg"" />
+                  </div>
+                  <div class="info">
+                    <p class="project-Name">blogr landing page</p>
+                    <p class="project-Details">
+                      a beautiful landing page using HTML and CSS and javascript
+                    </p>
+                    <p class="project-Type">LandingPage</p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://hexacode-web.github.io/ecommerce-product-page-main/"
+                >
+                  <div class="Projects-image">
+                    <img src="images/extra/project6.jpg" />
+                  </div>
+                  <div class="info">
+                    <p class="project-Name">e-commerce product page</p>
+                    <p class="project-Details">
+                      a fully functional product page using HTML and CSS and
+                      javascript
+                    </p>
+                    <p class="project-Type">Others</p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://hexacode-web.github.io/blackJack-game/">
+                  <div class="Projects-image">
+                    <img src="images/extra/blackJack.jpg" />
+                  </div>
+                  <div class="info">
+                    <p class="project-Name">blackJack game</p>
+                    <p class="project-Details">
+                      a fully functional black jack game made using HTML and CSS
+                      and javascript
+                    </p>
+                    <p class="project-Type">Major Project</p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://primemoviee.netlify.app/index.html">
+                  <div class="Projects-image">
+                    <img src="images/extra/Movie.jpg"" />
+                  </div>
+                  <div class="info">
+                    <p class="project-Name">movie streaming website</p>
+                    <p class="project-Details">
+                      a fully functional movie streaming website with login and
+                      logout ability and large library of movies
+                    </p>
+                    <p class="project-Type">Major Project</p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  href="https://hexacode-web.github.io/four-card-feature-section-master/"
+                >
+                  <div class="Projects-image">
+                    <img src="images/extra/Project7.jpg" />
+                  </div>
+                  <div class="info">
+                    <p class="project-Name">four Card feature section"</p>
+                    <p class="project-Details">
+                      a simple yet elegant one page website using HTML and CSS"
+                    </p>
+                    <p class="project-Type">Others</p>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://hexacode-web.github.io/portfolio/">
+                  <div class="Projects-image">
+                    <img src="images/extra/Project8.jpg" />
+                  </div>
+                  <div class="info">
+                    <p class="project-Name">portfolio</p>
+                    <p class="project-Details">
+                      a simple yet elegant one page website using HTML and CSS
+                      and javascript
+                    </p>
+                    <p class="project-Type">Others</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next swiper-navBtn"></div>
+          <div class="swiper-button-prev swiper-navBtn"></div>
           <div class="swiper-pagination"></div>
         </div>
       </section>
@@ -233,23 +355,14 @@
         <div id="status"></div>
       </section>
     </div>
+    <script src="swiper-bundle.js"></script>
     <script type="module" src="app.js"></script>
     <script type="module" src="ProjectsFunctions.js"></script>
-    <script
-      id="THIRDscript"
-      src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"
-    ></script>
-    <script id="thirdScriptContent">
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
-        centeredSlides: false,
-        spaceBetween: 0,
-        grabCursor: false,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-    </script>
   </body>
 </html>
+<!-- <div class="swiper mySwiper">
+  
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>  -->

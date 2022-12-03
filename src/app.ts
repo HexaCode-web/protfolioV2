@@ -1,3 +1,4 @@
+
 const burgerBTN: HTMLButtonElement = document.querySelector(".burger")!
 const exit: HTMLButtonElement = document.querySelector(".exit")!
 const sideBar: Element = document.querySelector("sidebar")!
@@ -12,15 +13,38 @@ const SCardContainer:HTMLDivElement=document.querySelector("#Services")!.querySe
 const cardBG: HTMLDivElement = document.querySelector(".cardBG")!
 const numberEL: HTMLDivElement = document.querySelector(".numbers")!
 const photos: HTMLDivElement = document.querySelector(".photos")!
+const canvas:HTMLDivElement=document.querySelector(".canvus")!
+const thirdScriptContent: any = document.querySelector("#thirdScriptContent")
 const iconsList = document.querySelector(".icons")!.querySelectorAll("img")!
 const Sections:object[]=Array.from(document.querySelectorAll("section"))
 const ContactSection:HTMLDivElement=document.querySelector("#contact")!
 const aboutSection: HTMLDivElement = document.querySelector("#about")!
+const ProjectsContainer:HTMLDivElement=document.querySelector(".swiper-wrapper")!
 const numbers = document.querySelectorAll(".num")
 let numbersDone: number = 0
 const interval = 3000
 console.log(Sections)
-
+if (window.innerWidth < 500) {
+    canvas.style.display = "none"
+}
+// document.addEventListener("scroll", () => {
+//     const windowHeight:number = window.innerHeight
+//     const revealPoint:number = 50;
+//     if (ProjectsContainer.getBoundingClientRect().top < windowHeight - revealPoint) {
+//         ProjectsContainer.style.opacity="1"
+//         numbersDone++
+//     if (numbersDone != 1) {
+//         return
+//     } else {
+//             ProjectsList.forEach(project => {
+//                 const ProjectEL = project as unknown as HTMLDivElement
+//                 ProjectEL.classList.remove("hidden")
+//                 const delay: number = ProjectsList.indexOf(project) * 0.1
+//                 ProjectEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`
+//             });
+//         }
+//         }
+// })
 photos.addEventListener("mouseenter", () => {
     for (let index = 0; index < iconsList.length; index++) {
         if(index===1||index===5)
@@ -36,8 +60,8 @@ photos.addEventListener("mouseleave", () => {
     });
 })
 document.addEventListener("scroll", () => {
-    const windowHeight:number = window.innerHeight
-    const revealPoint:number = 50;
+    const windowHeight: number = window.innerHeight
+    const revealPoint: number = 50;
     if (header.getBoundingClientRect().top < -66) {
         navbar.style.position = "fixed"
         navbar.style.paddingTop = "0"
@@ -51,6 +75,9 @@ document.addEventListener("scroll", () => {
     if (aboutSection.getBoundingClientRect().top < windowHeight-revealPoint) {
         const aboutSectionContent:HTMLDivElement=aboutSection.querySelector("content")!
         aboutSectionContent.classList.remove("hidden")
+    }
+    if (canvas.getBoundingClientRect().top < windowHeight - revealPoint) {
+        canvas.classList.remove("hidden")
     }if (cardContainer.getBoundingClientRect().top < 600) {
         CardsList.forEach(card => {
             if (CardsList.indexOf(card) <= 3) {
@@ -230,4 +257,37 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     };
     xhr.send(data);
-  };
+};
+var swiper = new Swiper(".slide-container", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    sliderPerGroup: 4,
+    loop: true,
+    centerSlide: "true",
+    fade: "true",
+    grabCursor: "true",
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      520: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1000: {
+        slidesPerView: 4,
+      },
+    },
+  });
