@@ -16,35 +16,19 @@ const photos: HTMLDivElement = document.querySelector(".photos")!
 const canvas:HTMLDivElement=document.querySelector(".canvus")!
 const thirdScriptContent: any = document.querySelector("#thirdScriptContent")
 const iconsList = document.querySelector(".icons")!.querySelectorAll("img")!
-const Sections:object[]=Array.from(document.querySelectorAll("section"))
+const Sections: object[] = Array.from(document.querySelectorAll("section"))
+const SkillSection:HTMLDivElement=document.querySelector("#Skills")!
 const ContactSection:HTMLDivElement=document.querySelector("#contact")!
 const aboutSection: HTMLDivElement = document.querySelector("#about")!
-const ProjectsContainer:HTMLDivElement=document.querySelector(".swiper-wrapper")!
+const ProjectsContainer: HTMLDivElement = document.querySelector(".swiper-wrapper")!
+const progressList:object[] =Array.from(document.querySelectorAll(".skill")!)
 const numbers = document.querySelectorAll(".num")
 let numbersDone: number = 0
+let numbersDone2:number=0
 const interval = 3000
-console.log(Sections)
 if (window.innerWidth < 500) {
     canvas.style.display = "none"
 }
-// document.addEventListener("scroll", () => {
-//     const windowHeight:number = window.innerHeight
-//     const revealPoint:number = 50;
-//     if (ProjectsContainer.getBoundingClientRect().top < windowHeight - revealPoint) {
-//         ProjectsContainer.style.opacity="1"
-//         numbersDone++
-//     if (numbersDone != 1) {
-//         return
-//     } else {
-//             ProjectsList.forEach(project => {
-//                 const ProjectEL = project as unknown as HTMLDivElement
-//                 ProjectEL.classList.remove("hidden")
-//                 const delay: number = ProjectsList.indexOf(project) * 0.1
-//                 ProjectEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`
-//             });
-//         }
-//         }
-// })
 photos.addEventListener("mouseenter", () => {
     for (let index = 0; index < iconsList.length; index++) {
         if(index===1||index===5)
@@ -62,6 +46,42 @@ photos.addEventListener("mouseleave", () => {
 document.addEventListener("scroll", () => {
     const windowHeight: number = window.innerHeight
     const revealPoint: number = 50;
+    if (ContactSection.getBoundingClientRect().top < windowHeight - revealPoint) {
+        console.log(ContactSection)
+        let ContactSectionText: HTMLDivElement = ContactSection.querySelector(".headline")!
+        let form: HTMLFormElement = ContactSection.querySelector("#my-form")!
+        console.log(form)
+        console.log(ContactSectionText)
+        ContactSectionText.classList.remove("hidden")
+        form.classList.remove("hidden")
+    }
+    if (SkillSection.getBoundingClientRect().top < windowHeight - revealPoint) {
+        numbersDone2++
+        if (numbersDone2 != 1) {
+            return
+        } else {
+            progressList.forEach((number: object) => {
+                const interval = 2000
+                let progressEL = number as unknown as HTMLDivElement
+                progressEL.classList.remove("op")
+                const delay: number = progressList.indexOf(number) * 0.1
+                progressEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`
+                let numberEL = progressEL.querySelector(".progress-number")!
+                let circleEL = progressEL.querySelector("circle")!
+                let startValue: number = 0
+                const elValue = Number(numberEL.getAttribute("data-val"))
+                circleEL.style.strokeDashoffset = `calc(472 * calc(1 - ${elValue / 100}))`
+                let duration = Math.floor(interval / elValue)
+                let counter = setInterval(() => {
+                    startValue += 1
+                    numberEL.textContent = startValue + "%" as unknown as string
+                    if (startValue === elValue) {
+                        clearInterval(counter)
+                    }
+                }, duration)
+            })
+        }
+    }
     if (header.getBoundingClientRect().top < -66) {
         navbar.style.position = "fixed"
         navbar.style.paddingTop = "0"
@@ -78,7 +98,8 @@ document.addEventListener("scroll", () => {
     }
     if (canvas.getBoundingClientRect().top < windowHeight - revealPoint) {
         canvas.classList.remove("hidden")
-    }if (cardContainer.getBoundingClientRect().top < 600) {
+    }
+    if (cardContainer.getBoundingClientRect().top < 600) {
         CardsList.forEach(card => {
             if (CardsList.indexOf(card) <= 3) {
                 const cardEL = card as unknown as HTMLDivElement
@@ -89,7 +110,6 @@ document.addEventListener("scroll", () => {
         }
         )
     };
-
     if (SCardContainer.getBoundingClientRect().top<windowHeight-revealPoint) {
         CardsList.forEach(card => {
             if (CardsList.indexOf(card) > 3) {
@@ -101,12 +121,6 @@ document.addEventListener("scroll", () => {
         }
         )
     };
-    if (ContactSection.getBoundingClientRect().top < windowHeight-revealPoint) {
-        let ContactSectionText: HTMLDivElement = ContactSection.querySelector(".headline")!
-        let form: HTMLFormElement = ContactSection.querySelector("#my-form")!
-        ContactSectionText.classList.remove("hidden")
-        form.classList.remove("hidden")
-    }
     if (numberEL.getBoundingClientRect().top < windowHeight-revealPoint) {
         numbersDone++
         if (numbersDone != 1) {
@@ -127,6 +141,7 @@ document.addEventListener("scroll", () => {
             })
         }
     }
+
 })
 exit.addEventListener("click", () => {
     CloseMenu()
@@ -162,7 +177,7 @@ SideBarLinksList.forEach(link => {
         })
 })
 const ScrollIntoView = (target:Element) => {
-    target.scrollIntoView(false)
+    target.scrollIntoView(true)
 }
 CardsList.forEach(card => {
     const cardEL=card as unknown as HTMLDivElement
@@ -261,33 +276,27 @@ window.addEventListener("DOMContentLoaded", () => {
 var swiper = new Swiper(".slide-container", {
     slidesPerView: 4,
     spaceBetween: 20,
-    sliderPerGroup: 4,
     loop: true,
     centerSlide: "true",
     fade: "true",
     grabCursor: "true",
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
-  
     breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      520: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      1000: {
-        slidesPerView: 4,
-      },
-    },
+        540: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          400: {
+            slidesPerView: 1,
+            spaceBetween: 10
+        }
+    }
   });

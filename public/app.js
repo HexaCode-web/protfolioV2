@@ -17,34 +17,18 @@ const canvas = document.querySelector(".canvus");
 const thirdScriptContent = document.querySelector("#thirdScriptContent");
 const iconsList = document.querySelector(".icons").querySelectorAll("img");
 const Sections = Array.from(document.querySelectorAll("section"));
+const SkillSection = document.querySelector("#Skills");
 const ContactSection = document.querySelector("#contact");
 const aboutSection = document.querySelector("#about");
 const ProjectsContainer = document.querySelector(".swiper-wrapper");
+const progressList = Array.from(document.querySelectorAll(".skill"));
 const numbers = document.querySelectorAll(".num");
 let numbersDone = 0;
+let numbersDone2 = 0;
 const interval = 3000;
-console.log(Sections);
 if (window.innerWidth < 500) {
     canvas.style.display = "none";
 }
-// document.addEventListener("scroll", () => {
-//     const windowHeight:number = window.innerHeight
-//     const revealPoint:number = 50;
-//     if (ProjectsContainer.getBoundingClientRect().top < windowHeight - revealPoint) {
-//         ProjectsContainer.style.opacity="1"
-//         numbersDone++
-//     if (numbersDone != 1) {
-//         return
-//     } else {
-//             ProjectsList.forEach(project => {
-//                 const ProjectEL = project as unknown as HTMLDivElement
-//                 ProjectEL.classList.remove("hidden")
-//                 const delay: number = ProjectsList.indexOf(project) * 0.1
-//                 ProjectEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`
-//             });
-//         }
-//         }
-// })
 photos.addEventListener("mouseenter", () => {
     for (let index = 0; index < iconsList.length; index++) {
         if (index === 1 || index === 5)
@@ -62,6 +46,43 @@ photos.addEventListener("mouseleave", () => {
 document.addEventListener("scroll", () => {
     const windowHeight = window.innerHeight;
     const revealPoint = 50;
+    if (ContactSection.getBoundingClientRect().top < windowHeight - revealPoint) {
+        console.log(ContactSection);
+        let ContactSectionText = ContactSection.querySelector(".headline");
+        let form = ContactSection.querySelector("#my-form");
+        console.log(form);
+        console.log(ContactSectionText);
+        ContactSectionText.classList.remove("hidden");
+        form.classList.remove("hidden");
+    }
+    if (SkillSection.getBoundingClientRect().top < windowHeight - revealPoint) {
+        numbersDone2++;
+        if (numbersDone2 != 1) {
+            return;
+        }
+        else {
+            progressList.forEach((number) => {
+                const interval = 2000;
+                let progressEL = number;
+                progressEL.classList.remove("op");
+                const delay = progressList.indexOf(number) * 0.1;
+                progressEL.style.animation = `slideFromBottom 1s ${delay}s ease-in both`;
+                let numberEL = progressEL.querySelector(".progress-number");
+                let circleEL = progressEL.querySelector("circle");
+                let startValue = 0;
+                const elValue = Number(numberEL.getAttribute("data-val"));
+                circleEL.style.strokeDashoffset = `calc(472 * calc(1 - ${elValue / 100}))`;
+                let duration = Math.floor(interval / elValue);
+                let counter = setInterval(() => {
+                    startValue += 1;
+                    numberEL.textContent = startValue + "%";
+                    if (startValue === elValue) {
+                        clearInterval(counter);
+                    }
+                }, duration);
+            });
+        }
+    }
     if (header.getBoundingClientRect().top < -66) {
         navbar.style.position = "fixed";
         navbar.style.paddingTop = "0";
@@ -101,12 +122,6 @@ document.addEventListener("scroll", () => {
         });
     }
     ;
-    if (ContactSection.getBoundingClientRect().top < windowHeight - revealPoint) {
-        let ContactSectionText = ContactSection.querySelector(".headline");
-        let form = ContactSection.querySelector("#my-form");
-        ContactSectionText.classList.remove("hidden");
-        form.classList.remove("hidden");
-    }
     if (numberEL.getBoundingClientRect().top < windowHeight - revealPoint) {
         numbersDone++;
         if (numbersDone != 1) {
@@ -163,7 +178,7 @@ SideBarLinksList.forEach(link => {
     });
 });
 const ScrollIntoView = (target) => {
-    target.scrollIntoView(false);
+    target.scrollIntoView(true);
 };
 CardsList.forEach(card => {
     const cardEL = card;
@@ -263,7 +278,6 @@ const ajax = (method, url, data, success, error) => {
 var swiper = new Swiper(".slide-container", {
     slidesPerView: 4,
     spaceBetween: 20,
-    sliderPerGroup: 4,
     loop: true,
     centerSlide: "true",
     fade: "true",
@@ -278,17 +292,13 @@ var swiper = new Swiper(".slide-container", {
         prevEl: ".swiper-button-prev",
     },
     breakpoints: {
-        0: {
+        540: {
             slidesPerView: 1,
+            spaceBetween: 20
         },
-        520: {
-            slidesPerView: 2,
-        },
-        768: {
-            slidesPerView: 3,
-        },
-        1000: {
-            slidesPerView: 4,
-        },
-    },
+        400: {
+            slidesPerView: 1,
+            spaceBetween: 10
+        }
+    }
 });
