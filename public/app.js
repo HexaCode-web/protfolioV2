@@ -275,30 +275,3 @@ const ajax = (method, url, data, success, error) => {
     };
     xhr.send(data);
 };
-var swiper = new Swiper(".slide-container", {
-    slidesPerView: 4,
-    spaceBetween: 20,
-    loop: true,
-    centerSlide: "true",
-    fade: "true",
-    grabCursor: "true",
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        dynamicBullets: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-        540: {
-            slidesPerView: 1,
-            spaceBetween: 20
-        },
-        400: {
-            slidesPerView: 1,
-            spaceBetween: 10
-        }
-    }
-});
