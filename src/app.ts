@@ -50,8 +50,7 @@ document.addEventListener("scroll", () => {
         console.log(ContactSection)
         let ContactSectionText: HTMLDivElement = ContactSection.querySelector(".headline")!
         let form: HTMLFormElement = ContactSection.querySelector("#my-form")!
-        console.log(form)
-        console.log(ContactSectionText)
+      
         ContactSectionText.classList.remove("hidden")
         form.classList.remove("hidden")
     }
@@ -184,55 +183,63 @@ CardsList.forEach(card => {
     cardEL.addEventListener("mouseenter", () => {
         cardBG.classList.remove("hidden")
         cardEL.insertBefore(cardBG, cardEL.children[0]);
-            switch (CardsList.indexOf(cardEL)) {
-                case 0:
-                    cardEL.querySelector("img")!.src="images/delicateHover.png"  
-                break;
-                case 1:
-                cardEL.querySelector("img")!.src="images/designHover.png"
-                break;
-                case 2:
-                    cardEL.querySelector("img")!.src="images/SaveHover.png"
-                break;
-                case 3:
-                    cardEL.querySelector("img")!.src="images/CustomerHover.png"
-                break;
-                case 4:
-                    cardEL.querySelector("img")!.src="images/buildHover.png"
-                break;
-                case 5:
-                    cardEL.querySelector("img")!.src="images/maintainHover.png"
-                break;
-                case 6:
-                    cardEL.querySelector("img")!.src="images/uiuxHover.png"
-                break;
-        }
+        switch (CardsList.indexOf(cardEL)) {
+            case 0:
+              cardEL.querySelector("img")!.src = "images/delicateHover.png";
+              break;
+            case 1:
+              cardEL.querySelector("img")!.src = "images/designHover.png";
+              break;
+            case 2:
+              cardEL.querySelector("img")!.src = "images/SaveHover.png";
+              break;
+            case 3:
+              cardEL.querySelector("img")!.src = "images/CustomerHover.png";
+              break;
+            case 4:
+              cardEL.querySelector("img")!.src =
+                "images/search-engine-optimisation-hover.png";
+              break;
+            case 5:
+              cardEL.querySelector("img")!.src = "images/buildHover.png";
+              break;
+            case 6:
+              cardEL.querySelector("img")!.src = "images/maintainHover.png";
+              break;
+            case 7:
+              cardEL.querySelector("img")!.src = "images/uiuxHover.png";
+              break;
+          }
     })
     cardEL.addEventListener("mouseleave", () => {
         cardBG.classList.add("hidden")
-            switch (CardsList.indexOf(cardEL)) {
-                case 0:
-                cardEL.querySelector("img")!.src="images/delicate.png"
-                break;
-                case 1:
-                cardEL.querySelector("img")!.src="images/design.png"
-                break;
-                case 2:
-                    cardEL.querySelector("img")!.src="images/Save.png"
-                break;
-                case 3:
-                cardEL.querySelector("img")!.src="images/Customer.png"
-                break;
-                case 4:
-                    cardEL.querySelector("img")!.src="images/build.png"
-                break;
-                case 5:
-                    cardEL.querySelector("img")!.src="images/maintain.png"
-                break;
-                case 6:
-                    cardEL.querySelector("img")!.src="images/uiux.png"
-                break;
-        }
+        switch (CardsList.indexOf(cardEL)) {
+            case 0:
+              cardEL.querySelector("img")!.src = "images/delicate.png";
+              break;
+            case 1:
+              cardEL.querySelector("img")!.src = "images/design.png";
+              break;
+            case 2:
+              cardEL.querySelector("img")!.src = "images/Save.png";
+              break;
+            case 3:
+              cardEL.querySelector("img")!.src = "images/Customer.png";
+              break;
+            case 4:
+              cardEL.querySelector("img")!.src =
+                "images/search-engine-optimisation.png";
+              break;
+            case 5:
+              cardEL.querySelector("img")!.src = "images/build.png";
+              break;
+            case 6:
+              cardEL.querySelector("img")!.src = "images/maintain.png";
+              break;
+            case 7:
+              cardEL.querySelector("img")!.src = "images/uiux.png";
+              break;
+          }
     })
 })
 
