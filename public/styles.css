@@ -210,6 +210,7 @@ bottom a {
   margin-bottom: 20px;
   animation: appearFromBottomT 0.5s 0.3s ease-in both;
 }
+
 .header-content .socials {
   width: 60%;
   display: flex;
@@ -441,11 +442,13 @@ section {
   min-height: 700px;
   background-color: black;
   padding-top: 10px;
+  width: 90%;
+  margin: auto;
+  gap: 60px;
 }
 #about content {
   width: 50%;
   margin-left: auto;
-  margin-right: 40px;
   animation: appearFromLeft 1s 0.5s ease-in both;
 }
 h2 {
@@ -561,6 +564,14 @@ h3 {
 #Projects .headline {
   margin-top: 100px;
   display: inline;
+}
+#Projects .subText {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  color: white;
+
+  margin-bottom: 20px;
 }
 .container {
   max-width: 1120px;
@@ -682,10 +693,11 @@ h3 {
             SERVICES
 ======================================== */
 .skill-group {
-  width: 95%;
+  width: 60%;
   margin: auto;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   height: 70%;
   gap: 30px;
@@ -757,6 +769,14 @@ svg {
   font-size: 3rem;
   margin-top: 20px;
   animation: appearFromBottomT 1s ease-in both;
+}
+#contact p {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  color: white;
+
+  margin-bottom: 20px;
 }
 form {
   height: 400px;
