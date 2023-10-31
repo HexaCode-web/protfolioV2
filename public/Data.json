@@ -1,0 +1,118 @@
+{
+  "skills": [
+    { "name": "React", "level": "100" },
+    { "name": "CSS", "level": "85" },
+    { "name": "JAVASCRIPT", "level": "95" },
+    { "name": "BOOTSTRAP", "level": "75" },
+    { "name": "TYPESCRIPT", "level": "80" },
+    { "name": "UI&UX", "level": "75" },
+    { "name": "Next JS", "level": "95" },
+    { "name": "Firebase", "level": "90" },
+    { "name": "HTML", "level": "100" }
+  ],
+  "testimonials": [
+    {
+      "Project": "Punjab appliance care",
+      "Rating": "5",
+      "description": "Marco Khairy is one of the very few freelancers on upwork those deserve 5 star ratings for their dedication, hard-work as well as 'i will do it' attitude. Any one looking for professional website building with advance approach like react js. Marco is the right person. Thanks Mr Marco for your incredible work !"
+    },
+    {
+      "Project": "Harptec",
+      "Rating": "5",
+      "description": "Working with Marco was a game-changer. They created a modern, user-friendly website that perfectly represents our brand. The process was effortless, and the results have significantly boosted our business."
+    }
+  ],
+  "projects": [
+    {
+      "name": "buzzTalk",
+      "details": "chat app with video and voice calling features along with sending complex files with the support of the backend of firebase",
+      "type": "Major Project",
+      "link": "https://buzztalk-hexacode.netlify.app/",
+      "src": "images/extra/buzzTalkProject.jpeg"
+    },
+    {
+      "name": "Punjab appliance care",
+      "details": "a fully functional Customizable landing page with backend support and Blog system and side pages",
+      "type": "Major Project",
+      "link": "https://buzztalk-hexacode.netlify.app/",
+      "src": "images/extra/project17.png"
+    },
+    {
+      "name": "Harptec",
+      "details": "a fully functional Customizable landing page with backend support and Blog system and side pages",
+      "type": "Major Project",
+      "link": "https://harptecc.netlify.app/",
+      "src": "images/extra/HarptecProject.jpeg"
+    },
+    {
+      "name": "e-commerce store",
+      "details": "an e-commerce store supported with a backend and ability to track orders and add/edit/remove products along with tracking the users",
+      "type": "Major Project",
+      "link": "https://terminal-hexacode.netlify.app/",
+      "src": "images/extra/TermnialProject.jpeg"
+    },
+    {
+      "name": "movie streaming website",
+      "details": "a fully functional movie streaming website with login and logout ability and large library of movies",
+      "type": "Major Project",
+      "link": "https://primemoviee.netlify.app/index.html",
+      "src": "images/extra/Movie.jpg"
+    },
+    {
+      "name": "Realedge Associates business company",
+      "details": "built from scratch and redesigned to keep up with the modern looks of today",
+      "type": "Business",
+      "link": "https://realedgeassociates.co/",
+      "src": "images/extra/Project16.jpg"
+    },
+    {
+      "name": "Quizzical!",
+      "details": "a trivia made with live api that can be tons of fun to play with friends!",
+      "type": "game",
+      "link": "https://quizzical-hexacode.netlify.app/",
+      "src": "images/extra/Project15.jpg"
+    },
+    {
+      "name": "blackJack game",
+      "details": "a fully functional black jack game made using HTML and CSS and javascript",
+      "type": "game",
+      "link": "https://hexacode-web.github.io/blackJack-game/",
+      "src": "images/extra/blackJack.jpg"
+    },
+    {
+      "name": "Huddle Landing Page",
+      "details": "a simple landing page using HTML and CSS and javascript",
+      "type": "LandingPage",
+      "link": "https://hexacode-web.github.io/huddle-landing-page-with-curved-sections/",
+      "src": "images/extra/huddle landing page.jpg"
+    },
+    {
+      "name": "clipboard landing page",
+      "details": "a simple yet elegant landing page using HTML and CSS and javascript",
+      "type": "LandingPage",
+      "link": "https://hexacode-web.github.io/clipboard-landing-page/",
+      "src": "images/extra/clipboard.jpg"
+    },
+    {
+      "name": "blogr landing page",
+      "details": "a beautiful landing page using HTML and CSS and javascript",
+      "type": "LandingPage",
+      "link": "https://hexacode-web.github.io/blogr-landing-page/",
+      "src": "images/extra/blogr landing page.jpg"
+    },
+    {
+      "name": "a meme generator using API",
+      "details": "a simple project to test the skills in REACT along with using API and fetch",
+      "type": "Simple Project",
+      "link": "https://meme-generator-hexacode.netlify.app/",
+      "src": "images/extra/Project11.jpg"
+    },
+    {
+      "name": "portfolio",
+      "details": "a simple yet elegant one-page website using HTML and CSS and javascript",
+      "type": "Others",
+      "link": "https://hexacode-web.github.io/portfolio/",
+      "src": "images/extra/Project8.jpg"
+    }
+  ]
+}

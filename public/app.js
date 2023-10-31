@@ -32,7 +32,7 @@ const progressList = Array.from(document.querySelectorAll(".skill"));
 const numbers = document.querySelectorAll(".num");
 let numbersDone = 0;
 let numbersDone2 = 0;
-const interval = 3000;
+const interval = 1000;
 if (window.innerWidth < 500) {
   canvas.style.display = "none";
 }
