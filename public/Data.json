@@ -84,7 +84,7 @@
       "details": "a simple landing page using HTML and CSS and javascript",
       "type": "LandingPage",
       "link": "https://hexacode-web.github.io/huddle-landing-page-with-curved-sections/",
-      "src": "images/extra/huddle landing page.jpg"
+      "src": "images/extra/huddle-landing-page.jpg"
     },
     {
       "name": "clipboard landing page",
@@ -98,7 +98,7 @@
       "details": "a beautiful landing page using HTML and CSS and javascript",
       "type": "LandingPage",
       "link": "https://hexacode-web.github.io/blogr-landing-page/",
-      "src": "images/extra/blogr landing page.jpg"
+      "src": "images/extra/blogr-landing-page.jpg"
     },
     {
       "name": "a meme generator using API",
